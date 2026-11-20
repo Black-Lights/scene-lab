@@ -1,0 +1,5 @@
+{
+  "gemma": { "name": "Gemma 4 E4B", "color": "gemma" },
+  "qwen": { "name": "Qwen3 1.7B", "color": "qwen" },
+  "qwen4": { "name": "Qwen3 4B", "color": "qwen" }
+}

@@ -1,0 +1,86 @@
+[
+ {
+  "request": "photo|padlock||1",
+  "provider": "wikimedia",
+  "id": "41501847",
+  "title": "Love padlocks on the Butchers' Bridge (Ljubljana)",
+  "author": "Petar Milošević",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Love_padlocks_on_the_Butchers%27_Bridge_(Ljubljana).jpg",
+  "flags": [
+   "SA"
+  ],
+  "file": "assets/wikimedia-2f24c2360286.jpg"
+ },
+ {
+  "request": "icon|bi:circle",
+  "provider": "iconify",
+  "id": "bi:circle",
+  "set": "Bootstrap Icons",
+  "author": "The Bootstrap Authors",
+  "license": "MIT",
+  "license_url": "https://github.com/twbs/icons/blob/main/LICENSE.md",
+  "url": "https://github.com/twbs/icons"
+ },
+ {
+  "request": "icon|bi:envelope",
+  "provider": "iconify",
+  "id": "bi:envelope",
+  "set": "Bootstrap Icons",
+  "author": "The Bootstrap Authors",
+  "license": "MIT",
+  "license_url": "https://github.com/twbs/icons/blob/main/LICENSE.md",
+  "url": "https://github.com/twbs/icons"
+ },
+ {
+  "request": "icon|bi:exclamation-triangle",
+  "provider": "iconify",
+  "id": "bi:exclamation-triangle",
+  "set": "Bootstrap Icons",
+  "author": "The Bootstrap Authors",
+  "license": "MIT",
+  "license_url": "https://github.com/twbs/icons/blob/main/LICENSE.md",
+  "url": "https://github.com/twbs/icons"
+ },
+ {
+  "request": "icon|bi:eye",
+  "provider": "iconify",
+  "id": "bi:eye",
+  "set": "Bootstrap Icons",
+  "author": "The Bootstrap Authors",
+  "license": "MIT",
+  "license_url": "https://github.com/twbs/icons/blob/main/LICENSE.md",
+  "url": "https://github.com/twbs/icons"
+ },
+ {
+  "request": "icon|bi:key",
+  "provider": "iconify",
+  "id": "bi:key",
+  "set": "Bootstrap Icons",
+  "author": "The Bootstrap Authors",
+  "license": "MIT",
+  "license_url": "https://github.com/twbs/icons/blob/main/LICENSE.md",
+  "url": "https://github.com/twbs/icons"
+ },
+ {
+  "request": "icon|bi:lock",
+  "provider": "iconify",
+  "id": "bi:lock",
+  "set": "Bootstrap Icons",
+  "author": "The Bootstrap Authors",
+  "license": "MIT",
+  "license_url": "https://github.com/twbs/icons/blob/main/LICENSE.md",
+  "url": "https://github.com/twbs/icons"
+ },
+ {
+  "request": "icon|bi:lock-fill",
+  "provider": "iconify",
+  "id": "bi:lock-fill",
+  "set": "Bootstrap Icons",
+  "author": "The Bootstrap Authors",
+  "license": "MIT",
+  "license_url": "https://github.com/twbs/icons/blob/main/LICENSE.md",
+  "url": "https://github.com/twbs/icons"
+ }
+]

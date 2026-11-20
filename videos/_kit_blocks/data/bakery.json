@@ -1,0 +1,42 @@
+{
+  "orders": {
+    "name": "orders, week 47",
+    "rows": [
+      { "id": "mon", "label": "Mon", "text": "Corner cafe", "color": "blue", "items": [{ "text": "sourdough", "sub": "x20" }] },
+      { "id": "tue", "label": "Tue", "text": "School: forty rolls for the trip", "color": "green" },
+      { "id": "wed", "label": "Wed", "text": "Wedding cake, by phone", "color": "orange", "ref": "#31", "hatch": true }
+    ],
+    "unit": "items",
+    "counts": [20, 60, 61]
+  },
+  "recipe": {
+    "name": "sourdough.txt",
+    "lines": ["500 g flour", "350 g water", "10 g salt", "100 g starter", "fold twice, rest 12 h", "bake 40 min at 230 C"],
+    "mark": "starter",
+    "tag": "one loaf"
+  },
+  "shop": {
+    "lanes": [
+      { "id": "baker", "name": "baker" },
+      { "id": "shop", "name": "shop", "boxes": [{ "id": "till", "name": "till", "edge": "customer", "on": ["ask", "hand"] }] },
+      { "id": "customer", "name": "customer" }
+    ],
+    "labels": { "shape": "shape the dough", "trays": "trays", "ask": "rye, please", "hand": "rye loaf" },
+    "tray": { "id": "tray", "label": "tray", "text": "40 rolls", "color": "green" },
+    "loaf": "rye x1",
+    "rule": { "head": "Rule", "n": 1, "phrase": "Bake what was ordered", "stamp": "KEPT" }
+  },
+  "sales": {
+    "label": "share of loaves sold",
+    "mask": "sold out",
+    "rows": [
+      { "rank": 1, "label": "sourdough", "value": 0.38 },
+      { "rank": 2, "label": "rye", "value": 0.24 },
+      { "rank": 3, "label": "baguette", "value": 0.21 },
+      { "rank": 4, "label": "brioche", "value": 0.17, "masked": true }
+    ],
+    "tag": "week 47",
+    "till": { "name": "till", "text": "week 47: 312 loaves, 1040.50 EUR, 0 returns", "span": "312 loaves" },
+    "myth": { "head": "Myth", "phrase": "Rye sells best", "underline": "Rye" }
+  }
+}

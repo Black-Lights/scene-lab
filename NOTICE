@@ -1,0 +1,8 @@
+Scene Lab
+Copyright 2026 Ammar Mughees
+
+Licensed under the Apache License, Version 2.0. The full text is in the file LICENSE.
+
+The licence covers the files of this repository and nothing else. Scene Lab renders with Remotion, which is not
+open source and has its own licence. THIRD-PARTY.md describes Remotion's terms and lists everything else that
+Scene Lab installs or fetches, each under its own licence.

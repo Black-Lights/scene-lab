@@ -1,0 +1,83 @@
+{
+  "names": { "document": "Document", "question": "Question", "draft": "Draft", "audit": "Audit", "final": "Final" },
+  "seats": { "reporter": "Reporter", "checker": "Fact-checker", "analyst": "Analyst", "critic": "Critic" },
+  "verdicts": [
+    [ { "t": "VERDICT: OK", "data": true } ],
+    [ { "t": "VERDICT: ISSUES", "data": true } ]
+  ],
+  "only": "rewrite only on ISSUES",
+  "grades": { "hallucination": "hallucination", "correct": "correct", "incomplete": "incomplete" },
+  "runs": {
+    "freeze": {
+      "analyst": "qwen",
+      "critic": "gemma",
+      "document": [
+        { "t": "... the code freeze, " },
+        { "t": "originally set for Friday 13 November", "mark": "wash", "on": "from" },
+        { "t": ", " },
+        { "t": "moves to Wednesday 18 November", "mark": "wash", "on": "to" },
+        { "t": " because the payment tests are still failing. ..." }
+      ],
+      "question": [
+        { "t": "Why was the code freeze " },
+        { "t": "moved to 13 November", "mark": "under", "on": "premise" },
+        { "t": "?" }
+      ],
+      "draft": [
+        { "t": "The code freeze was " },
+        { "t": "moved to 13 November", "mark": "under", "on": "grade1" },
+        { "t": " because the payment tests are still failing. ..." }
+      ],
+      "draftGrade": "hallucination",
+      "audit": [
+        [ { "t": "VERDICT: ISSUES", "data": true } ],
+        [
+          { "t": "[WRONG]", "data": true, "red": true },
+          { "t": " The code freeze was moved to 13 November ... : " },
+          { "t": "the document says the code freeze moves to Wednesday 18 November", "mark": "wash", "on": "quote" },
+          { "t": " ..." }
+        ]
+      ],
+      "final": [
+        { "t": "The code freeze was moved to " },
+        { "t": "18 November", "mark": "wash", "on": "grade2" },
+        { "t": " because the payment tests are still failing." }
+      ],
+      "finalGrade": "correct"
+    },
+    "mooring": {
+      "analyst": "gemma",
+      "critic": "qwen",
+      "document": [
+        { "t": "... raising the annual mooring fee ... for boats of 10 metres and over " },
+        { "t": "from 1,150 to 1,290 euros", "mark": "wash", "on": "draft" },
+        { "t": ". ..." }
+      ],
+      "question": [
+        { "t": "By how much will the annual mooring fee rise for a 12-metre boat?" }
+      ],
+      "draft": [
+        { "t": "The annual mooring fee for boats of 10 metres and over will rise from 1,150 to 1,290 euros. " },
+        { "t": "This represents an increase of 140 euros.", "mark": "wash", "on": "sum", "strike": "drops" }
+      ],
+      "draftGrade": "correct",
+      "audit": [
+        [ { "t": "VERDICT: ISSUES", "data": true } ],
+        [
+          { "t": "[WRONG]", "data": true, "red": true },
+          { "t": " \"This represents an increase of 140 euros\": ... " },
+          { "t": "which is an increase of 140 euros. However, the draft incorrectly states", "mark": "under", "on": "wrong" },
+          { "t": " ..." }
+        ],
+        [
+          { "t": "[UNSUPPORTED]", "data": true, "red": true },
+          { "t": " ... The document does not mention a 12-metre boat. ..." }
+        ]
+      ],
+      "final": [
+        { "t": "The annual mooring fee for boats of 10 metres and over will rise from 1,150 to 1,290 euros." }
+      ],
+      "finalGrade": "incomplete"
+    }
+  }
+}

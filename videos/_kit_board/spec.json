@@ -1,0 +1,50 @@
+{
+  "title": "Kit board: a 2D world across scenes",
+  "theme": "plate",
+  "captions": true,
+  "design": { "paint": { "lamp": "#F6DD8A" } },
+  "worlds": {
+    "flat": {
+      "component": "FlatPlan",
+      "tracks": { "walker": [600, 520], "light.*": "surface", "focus": null },
+      "places": {
+        "kitchen": { "pos": [0, 0], "size": [480, 340] },
+        "living": { "pos": [0, 340], "size": [480, 220] },
+        "hall": { "pos": [480, 0], "size": [240, 560] },
+        "bedroom": { "pos": [720, 0], "size": [480, 340] },
+        "bath": { "pos": [720, 340], "size": [480, 220] }
+      },
+      "props": { "rooms": { "kitchen": "Kitchen", "living": "Living room", "hall": "Hall", "bedroom": "Bedroom", "bath": "Bathroom" } }
+    }
+  },
+  "scenes": [
+    {
+      "heading": "A world on a board",
+      "say": "Here is a small flat from above. Someone comes in through the hall, walks into the kitchen and switches on the light.",
+      "visual": { "type": "world", "world": "flat", "title": "One flat, seen in three scenes",
+                  "shots": [ { "frame": "kitchen", "cue": "kitchen", "pad": 0.14 } ],
+                  "set": [ { "key": "walker", "to": [600, 170], "cue": "comes", "until": "walks" },
+                           { "key": "walker", "to": [240, 170], "cue": "walks", "until": "switches" },
+                           { "key": "light.kitchen", "to": "lamp", "cue": "light", "over": 1.6 } ] }
+    },
+    {
+      "say": "Then they cross the hall to the bedroom and turn on that light too.",
+      "visual": { "type": "world", "world": "flat", "title": "One flat, seen in three scenes",
+                  "shots": [ { "frame": ["kitchen", "bedroom"] }, { "frame": "bedroom", "cue": "bedroom", "pad": 0.14 } ],
+                  "set": [ { "key": "walker", "to": [600, 170], "cue": "cross", "until": "bedroom" },
+                           { "key": "walker", "to": [960, 170], "cue": "bedroom", "until": "turn" },
+                           { "key": "light.bedroom", "to": "lamp", "cue": "light" } ] }
+    },
+    {
+      "say": "Meanwhile, a scene of another kind sits between two views of the flat.",
+      "visual": { "type": "title", "title": "Another scene", "subtitle": "The flat waits, and keeps its state" }
+    },
+    {
+      "say": "Back in the flat, both lights are still on, and now only the bathroom matters.",
+      "visual": { "type": "world", "world": "flat", "title": "The flat again",
+                  "shots": [ { "frame": ["kitchen", "bedroom"] }, { "frame": "bath", "cue": "bathroom", "pad": 0.2 } ],
+                  "set": [ { "key": "focus", "to": "bath", "cue": "bathroom" } ],
+                  "labels": [ { "on": "bath", "text": "A dripping tap", "side": "top", "cue": "matters" } ] }
+    }
+  ]
+}

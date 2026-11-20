@@ -1,0 +1,29 @@
+{
+  "list": {
+    "name": "weekend.txt",
+    "lines": ["clothes", "boots", "wash bag", "umbrella (borrowed)", "shorts", "passport"],
+    "foot": "6 things, 1 borrowed",
+    "tag": "illustrative"
+  },
+  "first": "first",
+  "marker": "a",
+  "note": "Rain is forecast for Saturday, so the list changes.",
+  "source": "forecast, Friday",
+  "nights": { "n": 2, "word": "nights" },
+  "case": "in the case",
+  "legend": "borrowed",
+  "chips": { "clothes": "clothes", "boots": "boots", "umbrella": "umbrella", "passport": "passport" },
+  "expired": "packed, but expired",
+  "bar": {
+    "total": 40,
+    "number": "40 L",
+    "parts": [
+      { "id": "clothes", "color": "blue", "size": 18 },
+      { "id": "boots", "color": "brown", "size": 8 },
+      { "id": "wash", "color": "green", "size": 3 }
+    ],
+    "first": "18 L"
+  },
+  "taxi": "taxi",
+  "stamp": "CLOSED"
+}

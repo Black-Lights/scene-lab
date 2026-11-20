@@ -1,0 +1,28 @@
+{
+  "title": "Kit blocks: the larger 2D blocks on an everyday subject",
+  "theme": "plate",
+  "captions": true,
+  "scenes": [
+    {
+      "heading": "Orders",
+      "say": "Monday, the cafe orders twenty loaves. Tuesday, the school wants forty rolls. A wedding cake comes in by phone. The recipe: flour, then starter, and a new step, fold twice.",
+      "visual": { "type": "custom", "component": "Orders", "title": "A week in a bakery",
+                  "beats": { "mon": "the cafe", "tue": "the school", "wed": "wedding cake",
+                             "flour": "flour", "starter": "starter", "fold": "fold twice" } }
+    },
+    {
+      "heading": "The morning",
+      "say": "At four, the baker shapes the dough. The trays go to the shop. A customer asks for rye, and the shop hands it over. The rule holds.",
+      "visual": { "type": "custom", "component": "Shop", "title": "Who does what",
+                  "beats": { "shape": "shapes the dough", "trays": "The trays", "ask": "asks for rye",
+                             "hand": "hands it over", "rule": "The rule holds" } }
+    },
+    {
+      "heading": "Sales",
+      "say": "By Saturday, sourdough sells best, and brioche is sold out. The till prints three hundred and twelve loaves. Rye never led.",
+      "visual": { "type": "custom", "component": "Sales", "title": "The week in numbers",
+                  "beats": { "sat": "By Saturday", "best": "sells best", "out": "sold out", "till": "The till",
+                             "total": "three hundred and twelve", "wrong": "never led" } }
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "title": "Kit world: a 3D world across scenes",
+  "theme": "plate",
+  "captions": true,
+  "worlds": {
+    "garden": {
+      "component": "Garden",
+      "tracks": { "tank": 0.1, "soil": "brown", "tag": 1, "focus": null },
+      "places": {
+        "shed": { "pos": [-3, 0, -0.5], "size": [2.2, 2, 1.8] },
+        "tank": { "pos": [0.2, 0, -1.2], "size": [1.2, 1.7, 1.2] },
+        "bed": { "pos": [2.8, 0, 0.6], "size": [3, 0.5, 1.6] }
+      },
+      "props": { "litres": 200, "words": { "tank": "Rain tank", "volume": "Water in the tank" } }
+    }
+  },
+  "scenes": [
+    {
+      "heading": "A world in 3D",
+      "say": "This garden has a shed, a raised bed and a rain tank. When the rain comes, the tank begins to fill.",
+      "visual": { "type": "world", "world": "garden",
+                  "shots": [ { "frame": "tank", "cue": "rain tank", "dist": 1.8, "az": 25, "el": 22 } ],
+                  "set": [ { "key": "tank", "to": 0.85, "cue": "fill", "over": 2.4 } ] }
+    },
+    {
+      "say": "The water feeds the raised bed, and the soil turns green as the seedlings come up.",
+      "visual": { "type": "world", "world": "garden",
+                  "shots": [ { "frame": ["shed", "tank", "bed"], "az": 55, "el": 30 }, { "frame": ["bed", "tank"], "cue": "soil", "az": 60, "el": 14 } ],
+                  "set": [ { "key": "soil", "to": "green", "cue": "green", "over": 1.0 } ] }
+    },
+    {
+      "say": "Meanwhile, a scene of another kind sits between two views of the garden.",
+      "visual": { "type": "title", "title": "Another scene", "subtitle": "The garden waits, and keeps its state" }
+    },
+    {
+      "say": "Back in the garden, the tank is still full, and now only the shed matters.",
+      "visual": { "type": "world", "world": "garden",
+                  "shots": [ { "frame": ["shed", "tank"], "az": -40, "el": 20 }, { "frame": "shed", "cue": "shed", "pad": 0.12 } ],
+                  "set": [ { "key": "tag", "to": 0 }, { "key": "focus", "to": "shed", "cue": "shed" } ],
+                  "labels": [ { "on": "shed", "text": "Tools inside", "side": "top", "cue": "matters" } ] }
+    }
+  ]
+}

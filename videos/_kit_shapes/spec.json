@@ -1,0 +1,35 @@
+{
+  "title": "Kit shapes: 3D shapes and materials on an everyday subject",
+  "theme": "plate",
+  "captions": true,
+  "scenes": [
+    {
+      "heading": "The shed",
+      "say": "This garden shed has one door and a roof. A stone path is laid up to the door. When the roof lifts, the shed is empty inside, and a lamp comes on. The bin by the fence is only planned, so it is drawn as a ghost.",
+      "visual": {
+        "type": "custom", "component": "Shed", "title": "A garden shed",
+        "tracks": { "lid": 1, "path": 0, "lamp": 0, "focus": null },
+        "places": {
+          "shed": { "pos": [0, 0, -1], "size": [2.4, 2.0, 2.0] },
+          "path": { "pos": [0, 0, 1.25], "size": [0.7, 0.03, 2.4] },
+          "planter": { "pos": [1.9, 0, 0.9], "size": [1.0, 0.4, 0.6] },
+          "bin": { "pos": [-1.9, 0, 0.7], "size": [0.7, 0.9, 0.7] },
+          "lamp": { "pos": [0, 1.45, -1.2], "size": [0.3, 0.2, 0.3] }
+        },
+        "shots": [
+          { "frame": ["shed", "path", "planter", "bin"], "az": 30, "el": 24, "fit": [110, 200, 1700, 640] },
+          { "frame": ["shed"], "cue": "roof lifts", "az": 20, "el": 58, "over": 1.6, "fit": [110, 200, 1700, 640] },
+          { "frame": ["shed", "path", "planter", "bin"], "cue": "The bin", "az": 35, "el": 30, "over": 1.6, "fit": [110, 200, 1700, 640] }
+        ],
+        "set": [
+          { "key": "path", "to": 1, "cue": "stone path", "over": 1.6 },
+          { "key": "lid", "to": 0, "cue": "roof lifts", "over": 1.2 },
+          { "key": "lamp", "to": 1, "cue": "lamp comes on", "over": 0.4 }
+        ],
+        "labels": [
+          { "on": "bin", "text": "planned", "side": "top", "cue": "only planned" }
+        ]
+      }
+    }
+  ]
+}

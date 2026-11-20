@@ -1,0 +1,23 @@
+{
+  "title": "Kit parts: the 2D parts on an everyday subject",
+  "theme": "plate",
+  "captions": true,
+  "scenes": [
+    {
+      "heading": "The list",
+      "say": "Here is the packing list for a weekend away. The clothes and the boots go in first. The umbrella is borrowed from a neighbour. Rain is forecast, so the shorts come off the list.",
+      "visual": { "type": "custom", "component": "Packing", "title": "Packing for a rainy weekend",
+                  "beats": { "first": "The clothes", "boots": "the boots", "borrowed": "borrowed",
+                             "rain": "Rain is forecast", "off": "come off" },
+                  "props": { "done": [] } }
+    },
+    {
+      "cut": "none",
+      "say": "Everything goes into a forty litre case. The clothes take eighteen litres, and the boots eight. The passport is packed, but it has expired. The taxi comes in ten seconds, and the case is closed.",
+      "visual": { "type": "custom", "component": "Packing", "title": "Packing for a rainy weekend",
+                  "beats": { "case": "forty litre case", "litres": "eighteen litres", "passport": "The passport",
+                             "expired": "has expired", "taxi": "The taxi", "closed": "is closed" },
+                  "props": { "done": ["first", "boots", "borrowed", "rain", "off"] } }
+    }
+  ]
+}

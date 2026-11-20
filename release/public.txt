@@ -1,0 +1,110 @@
+# Scene Lab: the public allow-list
+#
+# Scene Lab is developed in a private working repository. Its release script (not part of this repository) copies a
+# git-tracked file into this public repository only when a line below matches its path, and only after a leak check
+# has passed it. Anything not matched stays private, so a new file is private until a line here names it.
+#
+# Format: one glob per line, relative to the repository root, with forward slashes. "*" matches inside one folder,
+# "**" matches any depth. A line starting with "!" takes paths back out (it wins over every other line). Blank
+# lines and lines starting with "#" are ignored. Untracked and ignored files (build/, out/, node_modules/, .env)
+# are never copied, whatever matches.
+
+# --- the project's own front pages and licence
+LICENSE
+NOTICE
+README.md
+CHANGELOG.md
+CONTRIBUTING.md
+THIRD-PARTY.md
+CLAUDE.md
+SPEC.md
+FEEDBACK.md
+.env.example
+.gitignore
+
+# --- configuration and setup
+package.json
+package-lock.json
+tsconfig.json
+remotion.config.ts
+requirements.txt
+setup.ps1
+
+# --- the engine (Python side)
+make.py
+custom.py
+cues.py
+render.py
+sound.py
+direction.py
+narration.py
+assets.py
+providers.py
+source.py
+page.py
+zonos.py
+runs_status.py
+
+# --- the engine (Remotion side): templates, the kit, the runtime
+src/**
+
+# --- optional Blender scripts (Blender itself is installed into tools/, which is never copied)
+blender/bench.py
+blender/install.ps1
+blender/install-mcp.ps1
+
+# --- documentation a user or a contributor needs
+docs/asset-sources.md
+docs/avoid-list.md
+docs/backlog.md
+docs/blender.md
+docs/design.md
+# made.md is filtered on export: release.py keeps only the rows of videos that are copied
+docs/made.md
+docs/plan-example.md
+docs/v0.3-architecture.md
+docs/voice-zonos3.md
+# workflows.md holds the rules for long runs; the runs list itself (docs/runs.md) is each user's own and not copied
+docs/workflows.md
+docs/kit/*.md
+docs/skill/README.md
+docs/skill/SKILL.md
+# binary files are named one by one (the leak gate refuses any other): the README's two contact sheets
+docs/img/moon-phases-2d.png
+docs/img/reflection-lab-free.png
+
+# --- research notes that docs/design.md, src/motion.ts and docs/asset-sources.md cite
+docs/research/assets.md
+docs/research/conventions.md
+docs/research/explainers.md
+docs/research/look.md
+docs/research/motion.md
+
+# --- demos and smoke tests, all on everyday subjects
+videos/_assets_test/**
+videos/_compat/**
+videos/_demo/**
+videos/_directions/**
+videos/_kit_blocks/**
+videos/_kit_board/**
+videos/_kit_core/**
+videos/_kit_errors/**
+videos/_kit_parts/**
+videos/_kit_shapes/**
+videos/_kit_world/**
+
+# --- two finished examples made from the skill alone
+videos/moon-phases-2d/**
+videos/reflection-lab-free/**
+
+# --- this list itself (it names only public paths)
+release/public.txt
+
+# --- never, even if a line above matches
+!**/build/**
+!**/out/**
+!**/page.html
+!.env
+!local/**
+!.runs/**
+!tools/**

@@ -1,0 +1,72 @@
+[
+ {
+  "request": "icon|ph:envelope",
+  "provider": "iconify",
+  "id": "ph:envelope",
+  "set": "Phosphor",
+  "author": "Phosphor Icons",
+  "license": "MIT",
+  "license_url": "https://github.com/phosphor-icons/core/blob/main/LICENSE",
+  "url": "https://github.com/phosphor-icons/core"
+ },
+ {
+  "request": "icon|ph:eye",
+  "provider": "iconify",
+  "id": "ph:eye",
+  "set": "Phosphor",
+  "author": "Phosphor Icons",
+  "license": "MIT",
+  "license_url": "https://github.com/phosphor-icons/core/blob/main/LICENSE",
+  "url": "https://github.com/phosphor-icons/core"
+ },
+ {
+  "request": "icon|ph:key",
+  "provider": "iconify",
+  "id": "ph:key",
+  "set": "Phosphor",
+  "author": "Phosphor Icons",
+  "license": "MIT",
+  "license_url": "https://github.com/phosphor-icons/core/blob/main/LICENSE",
+  "url": "https://github.com/phosphor-icons/core"
+ },
+ {
+  "request": "icon|ph:lock",
+  "provider": "iconify",
+  "id": "ph:lock",
+  "set": "Phosphor",
+  "author": "Phosphor Icons",
+  "license": "MIT",
+  "license_url": "https://github.com/phosphor-icons/core/blob/main/LICENSE",
+  "url": "https://github.com/phosphor-icons/core"
+ },
+ {
+  "request": "icon|ph:lock-fill",
+  "provider": "iconify",
+  "id": "ph:lock-fill",
+  "set": "Phosphor",
+  "author": "Phosphor Icons",
+  "license": "MIT",
+  "license_url": "https://github.com/phosphor-icons/core/blob/main/LICENSE",
+  "url": "https://github.com/phosphor-icons/core"
+ },
+ {
+  "request": "icon|ph:moon",
+  "provider": "iconify",
+  "id": "ph:moon",
+  "set": "Phosphor",
+  "author": "Phosphor Icons",
+  "license": "MIT",
+  "license_url": "https://github.com/phosphor-icons/core/blob/main/LICENSE",
+  "url": "https://github.com/phosphor-icons/core"
+ },
+ {
+  "request": "icon|ph:warning",
+  "provider": "iconify",
+  "id": "ph:warning",
+  "set": "Phosphor",
+  "author": "Phosphor Icons",
+  "license": "MIT",
+  "license_url": "https://github.com/phosphor-icons/core/blob/main/LICENSE",
+  "url": "https://github.com/phosphor-icons/core"
+ }
+]

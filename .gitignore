@@ -1,0 +1,17 @@
+node_modules/
+.venv/
+videos/*/build/
+videos/*/out/
+videos/*/page.html
+*.log
+.env
+assets/cache/
+__pycache__/
+tools/
+videos/*/sources/private/
+.runs/
+.cache/
+
+# a machine's own files: its private steps and settings (local/), its own project instructions for Claude
+local/
+CLAUDE.local.md

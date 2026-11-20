@@ -1,0 +1,62 @@
+[
+ {
+  "request": "icon|bi:envelope",
+  "provider": "iconify",
+  "id": "bi:envelope",
+  "set": "Bootstrap Icons",
+  "author": "The Bootstrap Authors",
+  "license": "MIT",
+  "license_url": "https://github.com/twbs/icons/blob/main/LICENSE.md",
+  "url": "https://github.com/twbs/icons"
+ },
+ {
+  "request": "icon|bi:exclamation-triangle",
+  "provider": "iconify",
+  "id": "bi:exclamation-triangle",
+  "set": "Bootstrap Icons",
+  "author": "The Bootstrap Authors",
+  "license": "MIT",
+  "license_url": "https://github.com/twbs/icons/blob/main/LICENSE.md",
+  "url": "https://github.com/twbs/icons"
+ },
+ {
+  "request": "icon|bi:eye",
+  "provider": "iconify",
+  "id": "bi:eye",
+  "set": "Bootstrap Icons",
+  "author": "The Bootstrap Authors",
+  "license": "MIT",
+  "license_url": "https://github.com/twbs/icons/blob/main/LICENSE.md",
+  "url": "https://github.com/twbs/icons"
+ },
+ {
+  "request": "icon|bi:key",
+  "provider": "iconify",
+  "id": "bi:key",
+  "set": "Bootstrap Icons",
+  "author": "The Bootstrap Authors",
+  "license": "MIT",
+  "license_url": "https://github.com/twbs/icons/blob/main/LICENSE.md",
+  "url": "https://github.com/twbs/icons"
+ },
+ {
+  "request": "icon|bi:lock",
+  "provider": "iconify",
+  "id": "bi:lock",
+  "set": "Bootstrap Icons",
+  "author": "The Bootstrap Authors",
+  "license": "MIT",
+  "license_url": "https://github.com/twbs/icons/blob/main/LICENSE.md",
+  "url": "https://github.com/twbs/icons"
+ },
+ {
+  "request": "icon|bi:lock-fill",
+  "provider": "iconify",
+  "id": "bi:lock-fill",
+  "set": "Bootstrap Icons",
+  "author": "The Bootstrap Authors",
+  "license": "MIT",
+  "license_url": "https://github.com/twbs/icons/blob/main/LICENSE.md",
+  "url": "https://github.com/twbs/icons"
+ }
+]

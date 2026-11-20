@@ -1,0 +1,907 @@
+{
+ "title": "Reflection Lab: can two small models catch each other's mistakes?",
+ "target_minutes": 3,
+ "voice": "bf_emma",
+ "captions": true,
+ "direction": {
+  "audience": "engineers and researchers who know what a language model is and have not read the note; in depth on the loop and on what makes a critic, so the agent tasks and the public benchmarks are left out of three minutes",
+  "form": "2d",
+  "why": [
+   "an argument about text checked against text, then counts out of 104: each claim stands beside its evidence (the models' own answers, quoted on sheets) and every count is a strip of 104 cells on one scale; nothing here has depth or parts, and a quoted answer has to be read flat, so 2D",
+   "one desk and two chairs, then the chairs swapped: the same two models give the note's best and its worst result, so the order is catch, damage, count, cause, repair, the larger gain, limits, not the note's section order; the look is a fact-checker's desk: desk green, proof paper, one red pencil for every objection, a highlighter, Literata (made for reading documents on Android) for what the models wrote and Roboto for what the lab says about it"
+  ],
+  "limits": [],
+  "asked": [
+   "a 3 minute video explaining this research note"
+  ]
+ },
+ "theme": "stage",
+ "design": {
+  "bg": "#173A30",
+  "surface": "#214A3E",
+  "ink": "#EEF1E9",
+  "ink2": "#C3D3C9",
+  "back": "#93AC9F",
+  "line": "#44695C",
+  "lit": "#F3C24F",
+  "paint": {
+   "paper": "#EEF1E9",
+   "print": "#14231D",
+   "pencil": "#B4281E",
+   "flag": "#FF8A75",
+   "marker": "#F3C24F",
+   "gemma": "#F3C24F",
+   "qwen": "#A4CFF4"
+  },
+  "roles": {
+   "a": "#F3C24F",
+   "b": "#A4CFF4",
+   "c": "#EEF1E9",
+   "warn": "#FF8A75"
+  },
+  "font": {
+   "text": "Roboto Flex",
+   "display": "Literata",
+   "data": "Roboto Mono"
+  },
+  "radius": 3
+ },
+ "topic": [
+  "ai",
+  "language models"
+ ],
+ "motif": "pencil-simple-line",
+ "scenes": [
+  {
+   "say": "Can two small language models, small enough for a phone, catch each other's mistakes? This note tests three: Gemma, and two sizes of {Qwen|Kwen}.",
+   "visual": {
+    "type": "custom",
+    "component": "Opening",
+    "beats": {
+     "gemma": "Gemma",
+     "qwen": "sizes"
+    },
+    "props": {
+     "name": "Reflection Lab",
+     "question": "Can two small language models that fit on a phone catch each other's mistakes?",
+     "models": [
+      {
+       "id": "gemma",
+       "size": "3.4 GB",
+       "at": "gemma"
+      },
+      {
+       "id": "qwen4",
+       "size": "2.3 GB",
+       "at": "qwen"
+      },
+      {
+       "id": "qwen",
+       "size": "1.6 GB",
+       "at": "qwen"
+      }
+     ],
+     "note": {
+      "text": "the same model files an Android phone runs, tested on a laptop GPU",
+      "at": "qwen"
+     }
+    }
+   }
+  },
+  {
+   "heading": "One desk, two chairs",
+   "say": "Picture a news desk. A reporter answers a question from a document. A fact-checker marks whatever the document does not support, and marks mean a rewrite. In the lab, both chairs hold a small model. The analyst drafts. The critic audits, and opens with a verdict: {OK|okay}, or issues. Only issues trigger a rewrite.",
+   "visual": {
+    "type": "custom",
+    "component": "Desk",
+    "title": "The loop: draft, audit, rewrite",
+    "beats": {
+     "reporter": "reporter",
+     "draft": "answers",
+     "question": "question",
+     "document": {
+      "cue": "document",
+      "nth": 1
+     },
+     "checker": "fact",
+     "audit": {
+      "cue": "marks",
+      "nth": 1
+     },
+     "final": {
+      "cue": "rewrite",
+      "nth": 1
+     },
+     "lab": "lab",
+     "chairs": "chairs",
+     "drafts": "drafts",
+     "audits": "audits",
+     "verdict": "verdict",
+     "only": "Only"
+    },
+    "props": {
+     "mode": "frame"
+    }
+   }
+  },
+  {
+   "cut": "none",
+   "say": "Here is one real run. The document says the code freeze moves from the {13th|thirteenth} of November to the {18th|eighteenth}. The question hides a false premise: why was it moved to the {13th|thirteenth}? The small {Qwen|Kwen}, as analyst, goes along. Gemma, as critic, quotes the document: the {18th|eighteenth}. The rewrite is correct.",
+   "visual": {
+    "type": "custom",
+    "component": "Desk",
+    "title": "A real run: the critic catches a false premise",
+    "beats": {
+     "doc": {
+      "cue": "document",
+      "nth": 1
+     },
+     "from": {
+      "cue": "13th",
+      "nth": 1
+     },
+     "to": {
+      "cue": "18th",
+      "nth": 1
+     },
+     "question": "question",
+     "premise": {
+      "cue": "13th",
+      "nth": 2
+     },
+     "analyst": "Qwen",
+     "draft": "goes",
+     "grade1": "along",
+     "critic": "Gemma",
+     "audit": "quotes",
+     "quote": {
+      "cue": "18th",
+      "nth": 2
+     },
+     "final": "rewrite",
+     "grade2": "correct"
+    },
+    "props": {
+     "mode": "case",
+     "run": "freeze",
+     "after": "frame"
+    }
+   }
+  },
+  {
+   "cut": "none",
+   "say": "Now swap the chairs. Gemma writes that a mooring fee rises from {1,150|eleven fifty} to {1,290|twelve ninety} euros, an increase of {140|one hundred and forty}. Correct. The small {Qwen|Kwen}, as critic, calls that sum wrong. The rewrite drops it, and a correct answer comes back incomplete.",
+   "visual": {
+    "type": "custom",
+    "component": "Desk",
+    "title": "Chairs swapped: the critic cuts a correct answer",
+    "beats": {
+     "swap": "swap",
+     "doc": "Gemma",
+     "draft": "writes",
+     "sum": "increase",
+     "grade1": {
+      "cue": "Correct",
+      "nth": 1
+     },
+     "audit": "critic",
+     "wrong": "wrong",
+     "final": "rewrite",
+     "drops": "drops",
+     "grade2": "incomplete"
+    },
+    "props": {
+     "mode": "case",
+     "run": "mooring",
+     "after": "freeze"
+    }
+   }
+  },
+  {
+   "heading": "104 questions",
+   "say": "Two runs prove nothing. So the note asks {104|a hundred and four} questions, each answered alone and with the critic. Gemma checking the small {Qwen|Kwen}: hallucinations fall from {14|fourteen} to {8|eight}. Chairs swapped: correct answers fall from {89|eighty-nine} to {81|eighty-one}. Both changes are statistically significant.",
+   "visual": {
+    "type": "custom",
+    "component": "Strips",
+    "title": "The same swap, counted on 104 questions",
+    "beats": {
+     "scale": "104",
+     "alone": "alone",
+     "both": "critic",
+     "ga": "checking",
+     "a1": "14",
+     "a2": "8",
+     "gb": "swapped",
+     "b1": "89",
+     "b2": "81",
+     "sig": "significant"
+    },
+    "props": {
+     "x0": 330,
+     "pitch": 12,
+     "legendAt": "scale",
+     "legendY": 760,
+     "legend": [
+      {
+       "kind": "ok",
+       "text": "correct"
+      },
+      {
+       "kind": "other",
+       "text": "incomplete or refused"
+      },
+      {
+       "kind": "bad",
+       "text": "hallucination"
+      }
+     ],
+     "foot": {
+      "text": "both under the first prompts",
+      "at": "sig",
+      "y": 762
+     },
+     "groups": [
+      {
+       "y": 200,
+       "at": "ga",
+       "head": [
+        {
+         "model": "qwen"
+        },
+        {
+         "text": "writes,"
+        },
+        {
+         "model": "gemma"
+        },
+        {
+         "text": "checks: hallucinations in 104 answers"
+        }
+       ],
+       "strips": [
+        {
+         "label": "alone",
+         "at": "a1",
+         "seg": [
+          [
+           74,
+           "ok"
+          ],
+          [
+           16,
+           "other"
+          ],
+          [
+           14,
+           "bad"
+          ]
+         ],
+         "value": [
+          {
+           "t": "14"
+          }
+         ],
+         "valueKind": "bad",
+         "ghostAt": "scale",
+         "labelAt": "alone"
+        },
+        {
+         "label": "with critic",
+         "at": "a2",
+         "seg": [
+          [
+           80,
+           "ok"
+          ],
+          [
+           16,
+           "other"
+          ],
+          [
+           8,
+           "bad"
+          ]
+         ],
+         "value": [
+          {
+           "t": "8"
+          }
+         ],
+         "valueKind": "bad",
+         "ghostAt": "both",
+         "labelAt": "both"
+        }
+       ],
+       "notes": [
+        {
+         "text": "6 removed, none added, p = 0.031",
+         "at": "sig"
+        }
+       ]
+      },
+      {
+       "y": 470,
+       "at": "gb",
+       "head": [
+        {
+         "model": "gemma"
+        },
+        {
+         "text": "writes,"
+        },
+        {
+         "model": "qwen"
+        },
+        {
+         "text": "checks: correct answers in 104"
+        }
+       ],
+       "strips": [
+        {
+         "label": "alone",
+         "at": "b1",
+         "seg": [
+          [
+           89,
+           "ok"
+          ],
+          [
+           12,
+           "other"
+          ],
+          [
+           3,
+           "bad"
+          ]
+         ],
+         "value": [
+          {
+           "t": "89"
+          }
+         ],
+         "ghostAt": "gb"
+        },
+        {
+         "label": "with critic",
+         "at": "b2",
+         "seg": [
+          [
+           81,
+           "ok"
+          ],
+          [
+           22,
+           "other"
+          ],
+          [
+           1,
+           "bad"
+          ]
+         ],
+         "value": [
+          {
+           "t": "81"
+          }
+         ],
+         "ghostAt": "gb"
+        }
+       ],
+       "notes": [
+        {
+         "text": "8 lost, none gained, p = 0.008",
+         "at": "sig"
+        }
+       ]
+      }
+     ]
+    }
+   }
+  },
+  {
+   "say": "Why? Count the objections. As critic, the {Qwen|Kwen} models objected to between {48|forty-eight} and {78|seventy-eight} of {104|a hundred and four} drafts, most of them correct. A critic that marks nearly everything tells the analyst nothing. Gemma, on its own drafts and under the second prompts we come to next, asked for {2|two} rewrites.",
+   "visual": {
+    "type": "custom",
+    "component": "Strips",
+    "title": "How often each critic objects",
+    "beats": {
+     "gq": "Qwen",
+     "q48": "48",
+     "q78": "78",
+     "most": "most",
+     "nothing": "nothing",
+     "gg": "Gemma",
+     "g2": "2"
+    },
+    "props": {
+     "x0": 330,
+     "pitch": 12,
+     "cellH": 56,
+     "row": 96,
+     "legendAt": "q48",
+     "legendY": 740,
+     "legend": [
+      {
+       "kind": "bad",
+       "text": "objection"
+      },
+      {
+       "kind": "maybe",
+       "text": "objection in some pairings"
+      },
+      {
+       "kind": "ok",
+       "text": "no objection"
+      }
+     ],
+     "foot": {
+      "text": "RAGTruth, a public test of this skill, F1: Gemma 4 E4B 74, Qwen3 4B 52",
+      "at": "g2",
+      "y": 812
+     },
+     "groups": [
+      {
+       "y": 200,
+       "at": "gq",
+       "head": [
+        {
+         "model": "qwen4"
+        },
+        {
+         "text": "or"
+        },
+        {
+         "model": "qwen"
+        },
+        {
+         "text": "as critic: drafts objected to"
+        }
+       ],
+       "strips": [
+        {
+         "label": "104 drafts",
+         "at": "q48",
+         "seg": [
+          [
+           48,
+           "bad",
+           "q48"
+          ],
+          [
+           30,
+           "maybe",
+           "q78"
+          ],
+          [
+           26,
+           "ok",
+           "q48"
+          ]
+         ],
+         "value": [
+          {
+           "t": "48",
+           "at": "q48"
+          },
+          {
+           "t": " to 78",
+           "at": "q78"
+          }
+         ],
+         "valueKind": "bad"
+        }
+       ],
+       "notes": [
+        {
+         "text": "most of these drafts were correct",
+         "at": "most"
+        },
+        {
+         "text": "so an objection carries no information",
+         "at": "nothing"
+        }
+       ]
+      },
+      {
+       "y": 470,
+       "at": "gg",
+       "head": [
+        {
+         "model": "gemma"
+        },
+        {
+         "text": "as critic, on its own drafts"
+        }
+       ],
+       "strips": [
+        {
+         "label": "104 drafts",
+         "at": "g2",
+         "seg": [
+          [
+           2,
+           "bad"
+          ],
+          [
+           102,
+           "ok"
+          ]
+         ],
+         "value": [
+          {
+           "t": "2"
+          }
+         ],
+         "valueKind": "bad"
+        }
+       ],
+       "notes": [
+        {
+         "text": "second prompts",
+         "at": "g2"
+        }
+       ]
+      }
+     ]
+    }
+   }
+  },
+  {
+   "heading": "Better instructions",
+   "say": "The repair was a stricter brief. The critic must now quote the document sentence behind each issue, or drop it, and the rewrite may never delete a correct calculation. After that, no pairing added more hallucinations than it removed. But the gains are two or three answers in {104|a hundred and four}: that could be chance.",
+   "visual": {
+    "type": "custom",
+    "component": "Brief",
+    "title": "The repair: quote the document, or drop the issue",
+    "beats": {
+     "critic": "critic",
+     "quote": "quote",
+     "refiner": "rewrite",
+     "never": "never",
+     "after": "After",
+     "rows": "removed",
+     "chance": "chance"
+    },
+    "props": {
+     "sheets": [
+      {
+       "name": "Critic, second prompt",
+       "y": 300,
+       "h": 190,
+       "at": "critic",
+       "segs": [
+        {
+         "t": "Redo every calculation, and "
+        },
+        {
+         "t": "quote the document sentence behind every issue, or drop it",
+         "mark": "wash",
+         "on": "quote"
+        },
+        {
+         "t": "."
+        }
+       ]
+      },
+      {
+       "name": "Refiner, second prompt",
+       "y": 590,
+       "h": 150,
+       "at": "refiner",
+       "segs": [
+        {
+         "t": "Apply only issues with a real quote; "
+        },
+        {
+         "t": "never delete a correct calculation",
+         "mark": "wash",
+         "on": "never"
+        },
+        {
+         "t": "."
+        }
+       ]
+      }
+     ],
+     "head": {
+      "text": "Hallucinations in 104 answers, second prompts",
+      "at": "after"
+     },
+     "by": "checked by",
+     "cols": [
+      "alone",
+      "with critic"
+     ],
+     "rowsAt": "rows",
+     "rows": [
+      {
+       "analyst": "gemma",
+       "critic": "gemma",
+       "from": "6",
+       "to": "4"
+      },
+      {
+       "analyst": "gemma",
+       "critic": "qwen4",
+       "from": "6",
+       "to": "3"
+      },
+      {
+       "analyst": "qwen4",
+       "critic": "qwen4",
+       "from": "7",
+       "to": "5"
+      }
+     ],
+     "note": {
+      "text": "p between 0.45 and 1.0: within chance on 104 questions",
+      "at": "chance"
+     }
+    }
+   }
+  },
+  {
+   "say": "The larger gain came before any critic. Told only to answer from the document, Gemma got {89|eighty-nine} right. Told that a calculation is allowed: {97|ninety-seven}, though a few sums came out wrong. With a calculator tool: {101|a hundred and one}.",
+   "visual": {
+    "type": "custom",
+    "component": "Strips",
+    "title": "The larger gain: instruct the analyst",
+    "beats": {
+     "head": "before",
+     "l1": {
+      "cue": "Told",
+      "nth": 1
+     },
+     "s1": "89",
+     "l2": {
+      "cue": "Told",
+      "nth": 2
+     },
+     "s2": "97",
+     "sums": "sums",
+     "l3": "calculator",
+     "s3": "101"
+    },
+    "props": {
+     "x0": 560,
+     "pitch": 11,
+     "cellH": 56,
+     "row": 96,
+     "legendAt": "s1",
+     "legendY": 690,
+     "legend": [
+      {
+       "kind": "ok",
+       "text": "correct"
+      },
+      {
+       "kind": "other",
+       "text": "incomplete or refused"
+      },
+      {
+       "kind": "bad",
+       "text": "hallucination"
+      }
+     ],
+     "foot": {
+      "text": "a critic on top, second prompts: 0 to +2 correct answers",
+      "at": "s3",
+      "y": 762
+     },
+     "groups": [
+      {
+       "y": 200,
+       "at": "head",
+       "head": [
+        {
+         "model": "gemma"
+        },
+        {
+         "text": "alone, no critic: correct answers in 104"
+        }
+       ],
+       "strips": [
+        {
+         "label": "answer only from the document",
+         "labelAt": "l1",
+         "at": "s1",
+         "seg": [
+          [
+           89,
+           "ok"
+          ],
+          [
+           12,
+           "other"
+          ],
+          [
+           3,
+           "bad"
+          ]
+         ],
+         "value": [
+          {
+           "t": "89"
+          }
+         ]
+        },
+        {
+         "label": "a calculation is allowed",
+         "labelAt": "l2",
+         "at": "s2",
+         "seg": [
+          [
+           97,
+           "ok"
+          ],
+          [
+           1,
+           "other"
+          ],
+          [
+           6,
+           "bad"
+          ]
+         ],
+         "value": [
+          {
+           "t": "97"
+          }
+         ]
+        },
+        {
+         "label": "plus a calculator tool",
+         "labelAt": "l3",
+         "at": "s3",
+         "seg": [
+          [
+           101,
+           "ok"
+          ],
+          [
+           1,
+           "other"
+          ],
+          [
+           2,
+           "bad"
+          ]
+         ],
+         "value": [
+          {
+           "t": "101"
+          }
+         ]
+        }
+       ],
+       "notes": [
+        {
+         "text": "calculations allowed: hallucinations rose from 3 to 6",
+         "at": "sums"
+        },
+        {
+         "text": "with the calculator: 2",
+         "at": "s3"
+        }
+       ]
+      }
+     ]
+    }
+   }
+  },
+  {
+   "heading": "Where the desk stops",
+   "say": "Here the news desk stops fitting: whoever retypes is a small model too. On long answers, Gemma's rewrites fixed {1|one} answer and broke {5|five}, mostly by corrupting numbers: {44.7 %|forty-four point seven percent} came back as {4444.7%|four thousand four hundred and forty-four point seven percent}. And the test is small, run on a laptop, not yet a phone.",
+   "visual": {
+    "type": "custom",
+    "component": "Smudge",
+    "title": "The rewrite can corrupt numbers",
+    "beats": {
+     "desk": "desk",
+     "seat": "model",
+     "long": "long",
+     "fixed": "fixed",
+     "broke": "broke",
+     "doc": "corrupting",
+     "back": "came",
+     "mark": "back",
+     "small": {
+      "cue": "small",
+      "nth": 2
+     }
+    },
+    "props": {
+     "document": {
+      "name": "Document",
+      "values": [
+       "44.7 %",
+       "$233.6 billion",
+       "100 million"
+      ],
+      "at": "doc"
+     },
+     "rewrite": {
+      "name": "Rewrite",
+      "values": [
+       "4444.7%",
+       "$23333.6 billion",
+       "10 0 million"
+      ],
+      "at": "back"
+     },
+     "retyper": {
+      "role": "Retyper",
+      "model": "gemma",
+      "at": "desk",
+      "seat": "seat"
+     },
+     "markAt": "mark",
+     "facts": [
+      {
+       "text": "Long answers, 50 items (FACTS Grounding)",
+       "at": "long"
+      },
+      {
+       "text": "Rewrites fixed 1 answer and broke 5",
+       "at": "fixed",
+       "strong": true
+      },
+      {
+       "text": "Correct: 82 % alone, 74 % with the loop",
+       "at": "broke"
+      },
+      {
+       "text": "7 of 16 rewrites hold a corrupted number",
+       "at": "back"
+      }
+     ],
+     "limits": {
+      "text": "104 questions, one laptop GPU, not yet a phone",
+      "at": "small"
+     }
+    }
+   }
+  },
+  {
+   "heading": "For the phone",
+   "say": "So, for the phone. Work on the analyst first: a prompt and a calculator did more than any critic. If there is a critic, seat Gemma; the loop then costs {1.7|one point seven} times one model. And check every number after a rewrite.",
+   "visual": {
+    "type": "custom",
+    "component": "Recap",
+    "title": "What the note recommends",
+    "beats": {
+     "first": "analyst",
+     "critic": "seat",
+     "check": "check"
+    },
+    "props": {
+     "rows": [
+      {
+       "text": "The analyst first: a better prompt and a calculator",
+       "at": "first"
+      },
+      {
+       "text": "If a critic: Gemma 4 E4B, at 1.7 times the model time",
+       "at": "critic"
+      },
+      {
+       "text": "A number check after every rewrite",
+       "at": "check"
+      }
+     ],
+     "gain": {
+      "from": "89",
+      "to": "101",
+      "unit": "correct answers in 104"
+     },
+     "seat": {
+      "role": "Critic",
+      "model": "gemma"
+     },
+     "slip": {
+      "value": "4444.7%"
+     }
+    }
+   }
+  }
+ ]
+}

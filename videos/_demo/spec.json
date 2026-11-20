@@ -1,0 +1,594 @@
+{
+  "title": "How HTTPS keeps a secret in public",
+  "target_minutes": 3,
+  "voice": "af_heart",
+  "speed": 1.0,
+  "captions": true,
+  "theme": "plate",
+  "topic": [
+    "security",
+    "computing"
+  ],
+  "motif": "lock",
+  "scenes": [
+    {
+      "say": "Every time you see the little lock in your browser, two computers that had never met just agreed on a secret, while anyone on the network could be listening. How is that even possible?",
+      "visual": {
+        "type": "title",
+        "title": "How HTTPS keeps a secret in public",
+        "subtitle": "The lock icon, in plain words",
+        "kicker": "Explained in three minutes"
+      }
+    },
+    {
+      "heading": "The problem",
+      "say": "Plain HTTP is like a postcard. Every network along the way can read it, and can even change it.",
+      "visual": {
+        "type": "diagram",
+        "direction": "LR",
+        "nodes": [
+          {
+            "id": "you",
+            "label": "Your browser",
+            "icon": "browser"
+          },
+          {
+            "id": "wifi",
+            "label": "Café Wi-Fi",
+            "icon": "wifi"
+          },
+          {
+            "id": "isp",
+            "label": "Internet provider",
+            "icon": "building"
+          },
+          {
+            "id": "site",
+            "label": "The server",
+            "icon": "server"
+          }
+        ],
+        "edges": [
+          {
+            "from": "you",
+            "to": "wifi",
+            "carry": {
+              "icon": "postcard",
+              "cue": "postcard"
+            }
+          },
+          {
+            "from": "wifi",
+            "to": "isp",
+            "carry": {
+              "icon": "postcard",
+              "cue": "way"
+            }
+          },
+          {
+            "from": "isp",
+            "to": "site",
+            "carry": {
+              "icon": "postcard",
+              "cue": "change"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "say": "HTTPS is a sealed envelope. Only the two ends can read it, and any tampering is detected.",
+      "visual": {
+        "type": "diagram",
+        "direction": "LR",
+        "nodes": [
+          {
+            "id": "you",
+            "label": "Your browser",
+            "icon": "browser"
+          },
+          {
+            "id": "wifi",
+            "label": "Café Wi-Fi",
+            "icon": "wifi"
+          },
+          {
+            "id": "isp",
+            "label": "Internet provider",
+            "icon": "building"
+          },
+          {
+            "id": "site",
+            "label": "The server",
+            "icon": "server"
+          }
+        ],
+        "edges": [
+          {
+            "from": "you",
+            "to": "wifi",
+            "carry": {
+              "icon": "envelope",
+              "cue": "sealed"
+            }
+          },
+          {
+            "from": "wifi",
+            "to": "isp",
+            "carry": {
+              "icon": "envelope",
+              "cue": "ends"
+            }
+          },
+          {
+            "from": "isp",
+            "to": "site",
+            "carry": {
+              "icon": "envelope",
+              "cue": "tampering"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "heading": "The trick",
+      "say": "Here is the trick, explained with paint. Mixing two paints is easy, but un-mixing them is practically impossible. That one-way step is the whole secret.",
+      "visual": {
+        "type": "analogy",
+        "link": "works like",
+        "left": {
+          "icon": "key",
+          "label": "Agreeing on a key",
+          "sub": "in front of everyone"
+        },
+        "right": {
+          "icon": "palette",
+          "label": "Mixing paint",
+          "sub": "easy to mix, practically impossible to un-mix",
+          "cue": "paint"
+        }
+      }
+    },
+    {
+      "say": "Both sides start from the same public color. Each one secretly mixes in a private color, and sends the mixture across. Then each adds its own secret color once more. Both land on exactly the same final color, but anyone watching only ever saw the mixtures. In real HTTPS the colors are huge numbers, and un-mixing them would take today's computers longer than the age of the universe.",
+      "visual": {
+        "type": "sequence",
+        "actors": [
+          {
+            "name": "Your browser",
+            "icon": "browser"
+          },
+          {
+            "name": "Anyone watching",
+            "icon": "eye",
+            "watch": true,
+            "cue": "watching"
+          },
+          {
+            "name": "The server",
+            "icon": "server"
+          }
+        ],
+        "messages": [
+          {
+            "note": "Public color",
+            "over": "all",
+            "swatch": "yellow",
+            "cue": "public"
+          },
+          {
+            "over": "Your browser",
+            "mix": [
+              "yellow",
+              "red"
+            ],
+            "swatch": "orange",
+            "cue": "secretly"
+          },
+          {
+            "over": "The server",
+            "mix": [
+              "yellow",
+              "blue"
+            ],
+            "swatch": "green",
+            "cue": "private"
+          },
+          {
+            "from": "Your browser",
+            "to": "The server",
+            "label": "Mixture",
+            "swatch": "orange",
+            "cue": "sends"
+          },
+          {
+            "from": "The server",
+            "to": "Your browser",
+            "label": "Mixture",
+            "swatch": "green",
+            "cue": "across",
+            "detail": {
+              "title": "Real HTTPS: a 32-byte public key (X25519)",
+              "lines": [
+                "d457 975a f4a3 3124",
+                "40a7 dfbf fab5 dce3",
+                "f0f3 7e08 87b3 52cc",
+                "663a 095a 5ffa d856"
+              ],
+              "cue": "numbers"
+            }
+          },
+          {
+            "over": "Your browser",
+            "mix": [
+              "green",
+              "red"
+            ],
+            "swatch": "brown",
+            "cue": "adds"
+          },
+          {
+            "over": "The server",
+            "mix": [
+              "orange",
+              "blue"
+            ],
+            "swatch": "brown",
+            "cue": "more"
+          }
+        ]
+      }
+    },
+    {
+      "say": "So the handshake goes like this. Your browser says hello and sends its paint mixture. The server replies with its own mixture, plus a certificate that proves who it is, like an ID card. Both now hold the same secret key, and everything after that is encrypted.",
+      "visual": {
+        "type": "sequence",
+        "actors": [
+          {
+            "name": "Your browser",
+            "icon": "browser"
+          },
+          {
+            "name": "Anyone watching",
+            "icon": "eye",
+            "watch": true
+          },
+          {
+            "name": "The server",
+            "icon": "server"
+          }
+        ],
+        "messages": [
+          {
+            "from": "Your browser",
+            "to": "The server",
+            "label": "Client hello",
+            "swatch": "orange",
+            "cue": "hello"
+          },
+          {
+            "from": "The server",
+            "to": "Your browser",
+            "label": "Server hello",
+            "swatch": "green",
+            "cue": "replies"
+          },
+          {
+            "from": "The server",
+            "to": "Your browser",
+            "label": "Certificate",
+            "icon": "id-card",
+            "sealed": true,
+            "cue": "certificate"
+          },
+          {
+            "over": "Your browser",
+            "note": "Same secret key",
+            "swatch": "brown",
+            "icon": "key",
+            "cue": "both"
+          },
+          {
+            "over": "The server",
+            "swatch": "brown",
+            "icon": "key",
+            "cue": "secret"
+          },
+          {
+            "from": "Your browser",
+            "to": "The server",
+            "label": "Encrypted data",
+            "sealed": true,
+            "both": true,
+            "cue": "everything",
+            "detail": {
+              "title": "What anyone watching holds (example bytes)",
+              "lines": [
+                "1f9a 9d7c b69a d27b",
+                "ba9b f6de 42eb bede",
+                "65b3 86c0 3089 bb26"
+              ],
+              "cue": "encrypted"
+            }
+          }
+        ]
+      },
+      "pause": 1.5
+    },
+    {
+      "say": "Could someone just try every possible key? Each extra bit doubles the work. At a billion billion guesses a second, a 128-bit key takes about ten thousand billion years, around eight hundred times the age of the universe.",
+      "visual": {
+        "type": "plot",
+        "title": "Time to try every key",
+        "x": {
+          "label": "key length in bits",
+          "ticks": [
+            40,
+            60,
+            80,
+            100,
+            120,
+            140
+          ]
+        },
+        "y": {
+          "label": "years, at 10¹⁸ guesses per second",
+          "log": true,
+          "min": 1e-14,
+          "max": 1e+17
+        },
+        "series": [
+          {
+            "label": "every key",
+            "cue": "doubles",
+            "points": [
+              [
+                40,
+                3.48e-14
+              ],
+              [
+                50,
+                3.57e-11
+              ],
+              [
+                60,
+                3.65e-08
+              ],
+              [
+                70,
+                3.74e-05
+              ],
+              [
+                80,
+                0.0383
+              ],
+              [
+                90,
+                39.2
+              ],
+              [
+                100,
+                40200
+              ],
+              [
+                110,
+                41100000.0
+              ],
+              [
+                120,
+                42100000000.0
+              ],
+              [
+                130,
+                43100000000000.0
+              ],
+              [
+                140,
+                4.42e+16
+              ]
+            ]
+          }
+        ],
+        "lines": [
+          {
+            "y": 13800000000.0,
+            "label": "age of the universe",
+            "cue": "around"
+          }
+        ],
+        "notes": [
+          {
+            "x": 128,
+            "y": 10800000000000.0,
+            "text": "128 bits: 10¹³ years",
+            "cue": "128-bit",
+            "dx": -70,
+            "dy": -90
+          }
+        ],
+        "source": "2¹²⁸ guesses at 10¹⁸ per second. Age of the universe: 13.8 billion years."
+      }
+    },
+    {
+      "say": "All of this happens on port four forty-three, the door your browser knocks on for HTTPS. Plain HTTP uses port eighty.",
+      "visual": {
+        "type": "diagram",
+        "direction": "LR",
+        "nodes": [
+          {
+            "id": "you",
+            "label": "Your browser",
+            "icon": "browser"
+          },
+          {
+            "id": "p443",
+            "label": "Port 443",
+            "sub": "HTTPS",
+            "cue": "four"
+          },
+          {
+            "id": "p80",
+            "label": "Port 80",
+            "sub": "plain HTTP",
+            "cue": "eighty"
+          },
+          {
+            "id": "web",
+            "label": "Web server",
+            "icon": "server",
+            "cue": "door"
+          }
+        ],
+        "edges": [
+          {
+            "from": "you",
+            "to": "p443",
+            "carry": {
+              "icon": "lock"
+            },
+            "cue": "knocks"
+          },
+          {
+            "from": "p443",
+            "to": "web"
+          },
+          {
+            "from": "you",
+            "to": "p80",
+            "dashed": true,
+            "cue": "uses"
+          },
+          {
+            "from": "p80",
+            "to": "web",
+            "dashed": true
+          }
+        ],
+        "groups": [
+          {
+            "label": "The server's machine",
+            "nodes": [
+              "p443",
+              "p80",
+              "web"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "heading": "Faster too",
+      "say": "Newer versions are faster, too. TLS one point two needs two round trips before your data can flow. TLS one point three needs just one. And a resumed connection can send data right away.",
+      "visual": {
+        "type": "chart",
+        "title": "Round trips before data flows",
+        "items": [
+          {
+            "label": "TLS 1.2",
+            "value": 2,
+            "cue": "two"
+          },
+          {
+            "label": "TLS 1.3",
+            "value": 1,
+            "cue": "just"
+          },
+          {
+            "label": "TLS 1.3, resumed",
+            "value": 0,
+            "cue": "resumed"
+          }
+        ]
+      }
+    },
+    {
+      "heading": "A short history",
+      "say": "The lock has been evolving for about thirty years. SSL arrived in nineteen ninety-five. TLS replaced it in ninety-nine. Version one point two came in two thousand eight, and one point three in twenty eighteen.",
+      "visual": {
+        "type": "timeline",
+        "items": [
+          {
+            "when": "1995",
+            "label": "SSL 2.0, the first public version",
+            "cue": "SSL"
+          },
+          {
+            "when": "1999",
+            "label": "TLS 1.0 replaces SSL",
+            "cue": "replaced"
+          },
+          {
+            "when": "2008",
+            "label": "TLS 1.2",
+            "cue": "came"
+          },
+          {
+            "when": "2018",
+            "label": "TLS 1.3, faster and simpler",
+            "cue": "twenty"
+          }
+        ]
+      }
+    },
+    {
+      "heading": "The catch",
+      "say": "And this is what someone snooping on the network actually sees. A tiny header that says, encrypted data follows, and then bytes that look like pure noise.",
+      "visual": {
+        "type": "code",
+        "title": "What an eavesdropper sees",
+        "cue": "header",
+        "highlight": [
+          1
+        ],
+        "code": "17 03 03 00 4a\n9f 2c e1 07 b4 5d 0a 73 c8 31\n6e f2 0b 99 a4 1d 58 e3 07 bc\n2a 91 d4 66 0f 3b c2 8e 75 19"
+      }
+    },
+    {
+      "say": "So the lock is a promise about the connection. But here is the catch.",
+      "visual": {
+        "type": "image",
+        "image": {
+          "q": "padlock",
+          "provider": "wikimedia",
+          "pick": 2
+        },
+        "caption": "A real padlock, the object the browser's lock icon stands for"
+      }
+    },
+    {
+      "say": "The lock means the line is private. It does not mean the site is honest. A scam site can have a perfectly valid certificate too.",
+      "visual": {
+        "type": "definition",
+        "icon": "warning",
+        "term": "What the lock means",
+        "text": "A private line to this site, whoever runs it."
+      }
+    },
+    {
+      "heading": "Recap",
+      "say": "So, three things to remember. The secret key is never sent, it is mixed. The certificate proves who you are talking to. And the lock protects the line, not the truth.",
+      "visual": {
+        "type": "recap",
+        "title": "Remember",
+        "items": [
+          {
+            "swatch": "brown",
+            "text": "The key is mixed on each side, never sent",
+            "cue": "secret"
+          },
+          {
+            "icon": "id-card",
+            "text": "The certificate proves who is talking",
+            "cue": "certificate"
+          },
+          {
+            "icon": "lock",
+            "text": "The lock protects the connection only",
+            "cue": "lock"
+          }
+        ]
+      }
+    }
+  ]
+}

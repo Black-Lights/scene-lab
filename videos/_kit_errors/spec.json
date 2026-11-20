@@ -1,0 +1,33 @@
+{
+  "title": "Kit errors: five scenes that fail, one video that finishes",
+  "theme": "plate",
+  "captions": true,
+  "scenes": [
+    {
+      "heading": "Errors",
+      "say": "This scene reads a track that its spec never declares.",
+      "visual": { "type": "custom", "component": "Throw2D", "title": "A track nobody declared",
+                  "tracks": { "level": 0 } }
+    },
+    {
+      "say": "This one asks for a colour inside the stage that the theme does not have.",
+      "visual": { "type": "custom", "component": "ThrowInStage", "title": "A colour inside the stage",
+                  "places": { "cube": { "pos": [0, 0, 0], "size": [1, 1, 1] } } }
+    },
+    {
+      "say": "Here the stage is fine, but the caption beside it fails while the scene cuts in.",
+      "visual": { "type": "custom", "component": "ThrowSibling", "title": "A sibling of the stage",
+                  "places": { "cube": { "pos": [0, 0, 0], "size": [1, 1, 1] } },
+                  "props": { "caption": "The stage draws once the scene has begun" } }
+    },
+    {
+      "say": "This scene is fine for its first second, and then it runs past the end of its list.",
+      "visual": { "type": "custom", "component": "ThrowLater", "title": "A failure after one second",
+                  "props": { "items": [ { "text": "The first item" } ] } }
+    },
+    {
+      "say": "And this scene's file throws while it loads, before any frame is drawn.",
+      "visual": { "type": "custom", "component": "Broken", "title": "A file that throws while it loads" }
+    }
+  ]
+}

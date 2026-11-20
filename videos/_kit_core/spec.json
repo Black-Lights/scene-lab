@@ -1,0 +1,39 @@
+{
+  "title": "Kit core: scene code on the engine",
+  "theme": "plate",
+  "captions": true,
+  "design": { "paint": { "water": "#2457C5" } },
+  "scenes": [
+    {
+      "heading": "Scene code",
+      "say": "Water runs into the glass when the tap opens, and the lamp turns green once the glass is full.",
+      "visual": { "type": "custom", "component": "Fill", "title": "A free scene with its own state",
+                  "tracks": { "level": 0.1, "lamp": "red", "water": "water" },
+                  "set": [ { "key": "level", "to": 0.9, "cue": "opens", "until": "full" },
+                           { "key": "lamp", "to": "green", "cue": "green" } ],
+                  "beats": { "full": "full" },
+                  "props": { "level": "Level", "lamp": "Lamp", "note": "Full" } }
+    },
+    {
+      "say": "A second scene of the same code starts from its own state, and this time the glass fills only halfway.",
+      "visual": { "type": "custom", "component": "Fill", "title": "The same code, its own state",
+                  "tracks": { "level": 0.1, "lamp": "red", "water": "water" },
+                  "set": [ { "key": "level", "to": 0.5, "cue": "fills" } ],
+                  "beats": { "full": "halfway" },
+                  "props": { "level": "Level", "lamp": "Lamp", "note": "Half" } }
+    },
+    {
+      "say": "Three slabs stand under the studio light: white, grey and blue. The top of each one shows its own colour exactly.",
+      "visual": { "type": "custom", "component": "Slabs", "title": "Light that keeps colours true",
+                  "places": { "white": { "pos": [-2.4, 0, 0], "size": [2, 0.5, 2] },
+                              "grey": { "pos": [0, 0, 0], "size": [2, 0.5, 2] },
+                              "blue": { "pos": [2.4, 0, 0], "size": [2, 0.5, 2] } },
+                  "shots": [ { "frame": ["white", "grey", "blue"], "az": 20, "el": 55, "fit": [110, 200, 1700, 640] } ],
+                  "labels": [ { "on": "white", "text": "White", "side": "bottom", "cue": "white" },
+                              { "on": "grey", "text": "Grey", "side": "bottom", "cue": "grey" },
+                              { "on": "blue", "text": "Blue", "side": "bottom", "cue": "blue" } ],
+                  "props": { "slabs": [ { "on": "white", "color": "#FFFFFF" }, { "on": "grey", "color": "#808080" },
+                                        { "on": "blue", "color": "blue" } ] } }
+    }
+  ]
+}

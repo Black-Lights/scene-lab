@@ -1,0 +1,40 @@
+{
+  "title": "Directions test: two demo scenes",
+  "voice": "af_heart",
+  "speed": 1.0,
+  "captions": true,
+  "chapter_cards": false,
+  "scenes": [
+    {
+      "heading": "The trick",
+      "say": "Both sides start from the same public color. Each one secretly mixes in a private color, and sends the mixture across. Then each adds its own secret color once more. Both land on exactly the same final color, but anyone watching only ever saw the mixtures. In real HTTPS the colors are huge numbers, and un-mixing them would take today's computers longer than the age of the universe.",
+      "visual": { "type": "sequence",
+        "actors": [ { "name": "Your browser", "icon": "browser" }, { "name": "Anyone watching", "icon": "eye", "watch": true, "cue": "watching" }, { "name": "The server", "icon": "server" } ],
+        "messages": [
+          { "note": "Public color", "over": "all", "swatch": "yellow", "cue": "public" },
+          { "over": "Your browser", "mix": ["yellow", "red"], "swatch": "orange", "cue": "secretly" },
+          { "over": "The server", "mix": ["yellow", "blue"], "swatch": "green", "cue": "private" },
+          { "from": "Your browser", "to": "The server", "label": "Mixture", "swatch": "orange", "cue": "sends" },
+          { "from": "The server", "to": "Your browser", "label": "Mixture", "swatch": "green", "cue": "across",
+            "detail": { "title": "Real HTTPS: a 32-byte public key (X25519)", "lines": ["d457 975a f4a3 3124", "40a7 dfbf fab5 dce3", "f0f3 7e08 87b3 52cc", "663a 095a 5ffa d856"], "cue": "numbers" } },
+          { "over": "Your browser", "mix": ["green", "red"], "swatch": "brown", "cue": "adds" },
+          { "over": "The server", "mix": ["orange", "blue"], "swatch": "brown", "cue": "more" }
+        ] }
+    },
+    {
+      "heading": "The handshake",
+      "say": "So the handshake goes like this. Your browser says hello and sends its paint mixture. The server replies with its own mixture, plus a certificate that proves who it is, like an ID card. Both now hold the same secret key, and everything after that is encrypted.",
+      "visual": { "type": "sequence",
+        "actors": [ { "name": "Your browser", "icon": "browser" }, { "name": "Anyone watching", "icon": "eye", "watch": true }, { "name": "The server", "icon": "server" } ],
+        "messages": [
+          { "from": "Your browser", "to": "The server", "label": "Client hello", "swatch": "orange", "cue": "hello" },
+          { "from": "The server", "to": "Your browser", "label": "Server hello", "swatch": "green", "cue": "replies" },
+          { "from": "The server", "to": "Your browser", "label": "Certificate", "icon": "id-card", "sealed": true, "cue": "certificate" },
+          { "over": "Your browser", "note": "Same secret key", "swatch": "brown", "icon": "key", "cue": "both" },
+          { "over": "The server", "swatch": "brown", "icon": "key", "cue": "secret" },
+          { "from": "Your browser", "to": "The server", "label": "Encrypted data", "sealed": true, "both": true, "cue": "everything",
+            "detail": { "title": "What anyone watching holds (example bytes)", "lines": ["1f9a 9d7c b69a d27b", "ba9b f6de 42eb bede", "65b3 86c0 3089 bb26"], "cue": "encrypted" } }
+        ] }
+    }
+  ]
+}

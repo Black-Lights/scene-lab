@@ -1,0 +1,319 @@
+{
+  "title": "Why the Moon has phases",
+  "target_minutes": 1.5,
+  "voice": "bf_emma",
+  "captions": true,
+  "direction": {
+    "audience": "curious adults and older children who have watched the Moon change but never had it explained; no astronomy, no formulas, first contact",
+    "form": "2d",
+    "why": [
+      "the phases are geometry in one plane: a ball lit on one half, seen from a point that circles it; two flat views tell it, the orbit from above and the disc as seen from Earth, and the user asked for 2D only",
+      "the lamp and ball first, then the same drawing renamed Sun, Earth and Moon and followed round one cycle, then the shadow guess tested on that drawing and where the room misleads; a twilight indigo ground in which the unlit half fades as it does in the sky, moonlight ink, sunlight amber, Earth blue, the copper of an eclipsed Moon, and Jost because its round letters echo the disc"
+    ],
+    "limits": [
+      "2d-only",
+      "no-blender"
+    ],
+    "asked": [
+      "explain in 90 seconds"
+    ]
+  },
+  "theme": "stage",
+  "design": {
+    "bg": "#1A2240",
+    "surface": "#232C4D",
+    "ink": "#ECE7DA",
+    "ink2": "#AAB1C6",
+    "line": "#3C4770",
+    "lit": "#F2B54A",
+    "font": {
+      "text": "Jost",
+      "display": "Jost"
+    },
+    "chrome": {
+      "progress": "corner"
+    },
+    "roles": {
+      "a": "#F2B54A",
+      "b": "#5B8FD0",
+      "c": "#ECE7DA",
+      "warn": "#C77A4E"
+    },
+    "paint": {
+      "sun": "#F2B54A",
+      "moonlit": "#ECE7DA",
+      "unlit": "#323C61",
+      "earthshine": "#262F52",
+      "earth": "#5B8FD0",
+      "night": "#22355E",
+      "shadow": "#10162B",
+      "sky": "#131A33",
+      "eclipse": "#9A5436"
+    }
+  },
+  "topic": [
+    "space"
+  ],
+  "motif": "moon",
+  "worlds": {
+    "orbit": {
+      "component": "Orbit",
+      "tracks": {
+        "angle": 0,
+        "sky": 0,
+        "facing": 0,
+        "shadow": 0,
+        "side": 0,
+        "tilt": 1,
+        "focus": null
+      },
+      "places": {
+        "light": {
+          "pos": [
+            0,
+            40
+          ],
+          "size": [
+            300,
+            520
+          ]
+        },
+        "orbit": {
+          "pos": [
+            380,
+            60
+          ],
+          "size": [
+            480,
+            480
+          ]
+        },
+        "view": {
+          "pos": [
+            960,
+            40
+          ],
+          "size": [
+            540,
+            520
+          ]
+        }
+      },
+      "props": {
+        "room": {
+          "light": "Lamp",
+          "centre": "You",
+          "ball": "Ball",
+          "view": "What you see",
+          "shadow": "Your head's shadow"
+        },
+        "space": {
+          "light": "Sunlight",
+          "centre": "Earth",
+          "ball": "Moon",
+          "view": "Seen from Earth",
+          "shadow": "Earth's shadow"
+        },
+        "phases": [
+          "New moon",
+          "Crescent",
+          "Half moon",
+          "Gibbous",
+          "Full moon",
+          "Gibbous",
+          "Half moon",
+          "Crescent"
+        ],
+        "sideview": {
+          "title": "From the side",
+          "path": "Moon's path, tilted about 5°",
+          "note": "angle drawn larger",
+          "shadow": "Earth's shadow",
+          "eclipse": "Eclipse"
+        }
+      }
+    }
+  },
+  "scenes": [
+    {
+      "say": "Why does the Moon change shape? Over about four weeks it grows from a thin curve to a half, then to a full circle, and then shrinks back to nothing.",
+      "visual": {
+        "type": "custom",
+        "component": "MoonFace",
+        "title": "Four weeks of the Moon",
+        "tracks": {
+          "phase": 0
+        },
+        "set": [
+          {
+            "key": "phase",
+            "to": 0.1,
+            "cue": "thin"
+          },
+          {
+            "key": "phase",
+            "to": 0.25,
+            "cue": "half"
+          },
+          {
+            "key": "phase",
+            "to": 0.5,
+            "cue": "full"
+          },
+          {
+            "key": "phase",
+            "to": 1,
+            "cue": "shrinks",
+            "over": 1.5
+          }
+        ]
+      }
+    },
+    {
+      "heading": "A lamp and a ball",
+      "say": "Try this in a dark room with one lamp. Hold a ball at arm's length and turn slowly on the spot, so the ball goes all the way round you. The lamp lights half the ball, and you see more of that half, then less.",
+      "visual": {
+        "type": "world",
+        "world": "orbit",
+        "title": "A ball at arm's length",
+        "set": [
+          {
+            "key": "angle",
+            "to": 360,
+            "cue": "turn",
+            "until": "less",
+            "ease": "linear"
+          }
+        ]
+      }
+    },
+    {
+      "heading": "Sun, Earth and Moon",
+      "say": "Now the lamp is the Sun, your head is the Earth, and the ball is the Moon. The Sun always lights half of the Moon. Between us and the Sun, that lit half faces away from us: a new moon.",
+      "visual": {
+        "type": "world",
+        "world": "orbit",
+        "title": "The same picture, in space",
+        "set": [
+          {
+            "key": "sky",
+            "to": 1,
+            "cue": "lamp",
+            "until": "Moon"
+          },
+          {
+            "key": "facing",
+            "to": 1,
+            "cue": "faces"
+          }
+        ]
+      }
+    },
+    {
+      "say": "A week later we see the lit half side on: a half moon. At two weeks the Moon is opposite the Sun, and all of the lit half faces us: full moon. Then the lit half turns away again, and the Moon shrinks. One cycle takes {29.5 days|twenty nine and a half days}.",
+      "visual": {
+        "type": "world",
+        "world": "orbit",
+        "title": "One cycle, from above",
+        "set": [
+          {
+            "key": "angle",
+            "to": 450,
+            "cue": "week",
+            "until": "side"
+          },
+          {
+            "key": "angle",
+            "to": 540,
+            "cue": "two",
+            "until": "opposite"
+          },
+          {
+            "key": "angle",
+            "to": 720,
+            "cue": "turns",
+            "over": 2.2
+          }
+        ]
+      }
+    },
+    {
+      "heading": "Not a shadow",
+      "say": "A common guess is that Earth's shadow makes the phases. But Earth's shadow points away from the Sun, and a half moon is nowhere near it.",
+      "visual": {
+        "type": "world",
+        "world": "orbit",
+        "title": "Where Earth's shadow falls",
+        "set": [
+          {
+            "key": "shadow",
+            "to": 1,
+            "cue": "points"
+          },
+          {
+            "key": "angle",
+            "to": 810,
+            "cue": "half",
+            "until": "near"
+          }
+        ]
+      }
+    },
+    {
+      "say": "Here the lamp and ball mislead: your head shades the ball every turn. The Moon's path is tilted about five degrees, so most full moons pass just above or below our shadow. When the Moon does pass through it, we see an eclipse.",
+      "visual": {
+        "type": "world",
+        "world": "orbit",
+        "title": "Where the room misleads",
+        "set": [
+          {
+            "key": "sky",
+            "to": 0,
+            "cue": "lamp",
+            "over": 0.8
+          },
+          {
+            "key": "angle",
+            "to": 900,
+            "cue": "shades",
+            "until": "turn"
+          },
+          {
+            "key": "sky",
+            "to": 1,
+            "cue": "path",
+            "over": 0.8
+          },
+          {
+            "key": "side",
+            "to": 1,
+            "cue": "tilted"
+          },
+          {
+            "key": "tilt",
+            "to": 0,
+            "cue": "through",
+            "until": "eclipse"
+          }
+        ]
+      }
+    },
+    {
+      "say": "So a phase is how much of the Moon's sunlit half faces us.",
+      "pause": 2.5,
+      "visual": {
+        "type": "world",
+        "world": "orbit",
+        "title": "What a phase is",
+        "beats": { "def": "phase" },
+        "set": [
+          { "key": "side", "to": 0, "at": 0.1, "over": 0.8 },
+          { "key": "shadow", "to": 0, "at": 0.1, "over": 0.8 },
+          { "key": "angle", "to": 990, "cue": "how", "until": "us" },
+          { "key": "facing", "to": 1, "cue": "sunlit" }
+        ],
+        "props": { "definition": { "term": "Phase", "text": "how much of the Moon's sunlit half faces us" } }
+      }
+    }
+  ]
+}

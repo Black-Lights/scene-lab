@@ -1,0 +1,144 @@
+[
+ {
+  "request": "photo|padlock|wikimedia|2",
+  "provider": "wikimedia",
+  "id": "65582711",
+  "title": "Solex 99 30 padlock with keys (DSCF2659)",
+  "author": "Trougnouf",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Solex_99_30_padlock_with_keys_(DSCF2659).jpg",
+  "flags": [],
+  "file": "assets/wikimedia-d61d7dd5c840.jpg"
+ },
+ {
+  "request": "icon|bi:building",
+  "provider": "iconify",
+  "id": "bi:building",
+  "set": "Bootstrap Icons",
+  "author": "The Bootstrap Authors",
+  "license": "MIT",
+  "license_url": "https://github.com/twbs/icons/blob/main/LICENSE.md",
+  "url": "https://github.com/twbs/icons"
+ },
+ {
+  "request": "icon|bi:envelope",
+  "provider": "iconify",
+  "id": "bi:envelope",
+  "set": "Bootstrap Icons",
+  "author": "The Bootstrap Authors",
+  "license": "MIT",
+  "license_url": "https://github.com/twbs/icons/blob/main/LICENSE.md",
+  "url": "https://github.com/twbs/icons"
+ },
+ {
+  "request": "icon|bi:exclamation-triangle",
+  "provider": "iconify",
+  "id": "bi:exclamation-triangle",
+  "set": "Bootstrap Icons",
+  "author": "The Bootstrap Authors",
+  "license": "MIT",
+  "license_url": "https://github.com/twbs/icons/blob/main/LICENSE.md",
+  "url": "https://github.com/twbs/icons"
+ },
+ {
+  "request": "icon|bi:eye",
+  "provider": "iconify",
+  "id": "bi:eye",
+  "set": "Bootstrap Icons",
+  "author": "The Bootstrap Authors",
+  "license": "MIT",
+  "license_url": "https://github.com/twbs/icons/blob/main/LICENSE.md",
+  "url": "https://github.com/twbs/icons"
+ },
+ {
+  "request": "icon|bi:key",
+  "provider": "iconify",
+  "id": "bi:key",
+  "set": "Bootstrap Icons",
+  "author": "The Bootstrap Authors",
+  "license": "MIT",
+  "license_url": "https://github.com/twbs/icons/blob/main/LICENSE.md",
+  "url": "https://github.com/twbs/icons"
+ },
+ {
+  "request": "icon|bi:lock",
+  "provider": "iconify",
+  "id": "bi:lock",
+  "set": "Bootstrap Icons",
+  "author": "The Bootstrap Authors",
+  "license": "MIT",
+  "license_url": "https://github.com/twbs/icons/blob/main/LICENSE.md",
+  "url": "https://github.com/twbs/icons"
+ },
+ {
+  "request": "icon|bi:lock-fill",
+  "provider": "iconify",
+  "id": "bi:lock-fill",
+  "set": "Bootstrap Icons",
+  "author": "The Bootstrap Authors",
+  "license": "MIT",
+  "license_url": "https://github.com/twbs/icons/blob/main/LICENSE.md",
+  "url": "https://github.com/twbs/icons"
+ },
+ {
+  "request": "icon|bi:palette",
+  "provider": "iconify",
+  "id": "bi:palette",
+  "set": "Bootstrap Icons",
+  "author": "The Bootstrap Authors",
+  "license": "MIT",
+  "license_url": "https://github.com/twbs/icons/blob/main/LICENSE.md",
+  "url": "https://github.com/twbs/icons"
+ },
+ {
+  "request": "icon|bi:person-vcard",
+  "provider": "iconify",
+  "id": "bi:person-vcard",
+  "set": "Bootstrap Icons",
+  "author": "The Bootstrap Authors",
+  "license": "MIT",
+  "license_url": "https://github.com/twbs/icons/blob/main/LICENSE.md",
+  "url": "https://github.com/twbs/icons"
+ },
+ {
+  "request": "icon|bi:postcard",
+  "provider": "iconify",
+  "id": "bi:postcard",
+  "set": "Bootstrap Icons",
+  "author": "The Bootstrap Authors",
+  "license": "MIT",
+  "license_url": "https://github.com/twbs/icons/blob/main/LICENSE.md",
+  "url": "https://github.com/twbs/icons"
+ },
+ {
+  "request": "icon|bi:server",
+  "provider": "iconify",
+  "id": "bi:server",
+  "set": "Bootstrap Icons",
+  "author": "The Bootstrap Authors",
+  "license": "MIT",
+  "license_url": "https://github.com/twbs/icons/blob/main/LICENSE.md",
+  "url": "https://github.com/twbs/icons"
+ },
+ {
+  "request": "icon|bi:wifi",
+  "provider": "iconify",
+  "id": "bi:wifi",
+  "set": "Bootstrap Icons",
+  "author": "The Bootstrap Authors",
+  "license": "MIT",
+  "license_url": "https://github.com/twbs/icons/blob/main/LICENSE.md",
+  "url": "https://github.com/twbs/icons"
+ },
+ {
+  "request": "icon|bi:window",
+  "provider": "iconify",
+  "id": "bi:window",
+  "set": "Bootstrap Icons",
+  "author": "The Bootstrap Authors",
+  "license": "MIT",
+  "license_url": "https://github.com/twbs/icons/blob/main/LICENSE.md",
+  "url": "https://github.com/twbs/icons"
+ }
+]

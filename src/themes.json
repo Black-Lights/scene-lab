@@ -1,0 +1,287 @@
+{
+  "default": "plate",
+  "themes": {
+    "plate": {
+      "id": "plate",
+      "dark": false,
+      "look": "plate",
+      "bg": "#E3ECF4",
+      "surface": "#F7FAFC",
+      "lane": "#CFDCE8",
+      "onLane": "#14202F",
+      "ink": "#14202F",
+      "ink2": "#2E3D50",
+      "back": "#4F6074",
+      "line": "#5F7387",
+      "roles": {
+        "a": "#1F4FA8",
+        "b": "#B0261A",
+        "c": "#14202F",
+        "warn": "#B0261A"
+      },
+      "paint": {
+        "yellow": "#F5C400",
+        "red": "#C8283A",
+        "blue": "#2457C5",
+        "orange": "#F08A1C",
+        "green": "#149E78",
+        "brown": "#6E4022",
+        "sealed": "#6E4022"
+      },
+      "font": {
+        "text": "Atkinson Hyperlegible Next",
+        "display": "Atkinson Hyperlegible Next",
+        "data": "Atkinson Hyperlegible Mono"
+      },
+      "weight": {
+        "text": 500,
+        "strong": 600,
+        "display": 700
+      },
+      "stroke": 3,
+      "radius": 12,
+      "caption": {
+        "plate": "transparent",
+        "ink": "#14202F",
+        "upcoming": "#14202F",
+        "size": 48,
+        "radius": 0,
+        "align": "left"
+      },
+      "icons": [
+        "bi"
+      ],
+      "iconAlias": {
+        "browser": "window",
+        "id-card": "person-vcard",
+        "warning": "exclamation-triangle",
+        "document": "file-earmark-text",
+        "agent": "robot",
+        "database": "database",
+        "user": "person",
+        "chart": "graph-up",
+        "cloud": "cloud",
+        "satellite": "broadcast",
+        "mail": "envelope",
+        "postcard": "postcard"
+      }
+    },
+    "stage": {
+      "id": "stage",
+      "dark": true,
+      "look": "stage",
+      "bg": "#18241F",
+      "surface": "#18241F",
+      "lit": "#30483D",
+      "lane": "#18241F",
+      "onLane": "#EEF2EA",
+      "ink": "#EEF2EA",
+      "ink2": "#C5D1C8",
+      "back": "#8DA196",
+      "line": "#6F8479",
+      "roles": {
+        "a": "#EED46A",
+        "b": "#F3A7B5",
+        "c": "#EED46A",
+        "warn": "#F3A7B5"
+      },
+      "paint": {
+        "yellow": "#F2C522",
+        "red": "#E5452E",
+        "blue": "#3D7BE0",
+        "orange": "#F08C24",
+        "green": "#2FA36B",
+        "brown": "#7B4A26",
+        "sealed": "#EEF2EA"
+      },
+      "font": {
+        "text": "Recursive",
+        "display": "Recursive",
+        "data": "Recursive"
+      },
+      "weight": {
+        "text": 500,
+        "strong": 650,
+        "display": 700
+      },
+      "stroke": 3,
+      "radius": 14,
+      "caption": {
+        "plate": "#0F1714",
+        "ink": "#EEF2EA",
+        "upcoming": "#EEF2EA",
+        "size": 44,
+        "radius": 10,
+        "align": "center"
+      },
+      "icons": [
+        "ph"
+      ],
+      "iconAlias": {
+        "browser": "browser",
+        "server": "hard-drives",
+        "id-card": "identification-card",
+        "document": "file-text",
+        "agent": "robot",
+        "user": "user",
+        "chart": "chart-line",
+        "mail": "envelope-simple",
+        "postcard": "envelope-open",
+        "satellite": "broadcast"
+      }
+    },
+    "ground": {
+      "id": "ground",
+      "dark": false,
+      "look": "ground",
+      "bg": "#B9B3A6",
+      "surface": "#EEEAE1",
+      "lane": "#3C3B37",
+      "onLane": "#EEEAE1",
+      "ink": "#1E1D1A",
+      "ink2": "#2E2C28",
+      "back": "#47443E",
+      "line": "#1E1D1A",
+      "roles": {
+        "a": "#1E1D1A",
+        "b": "#1E1D1A",
+        "c": "#EEEAE1",
+        "warn": "#C8283A"
+      },
+      "paint": {
+        "yellow": "#F2C511",
+        "red": "#C8283A",
+        "blue": "#2456A8",
+        "orange": "#EC8A12",
+        "green": "#0E9C6E",
+        "brown": "#6A4127",
+        "sealed": "#1E1D1A"
+      },
+      "font": {
+        "text": "Archivo",
+        "display": "Archivo",
+        "data": "Atkinson Hyperlegible Mono"
+      },
+      "weight": {
+        "text": 500,
+        "strong": 650,
+        "display": 700
+      },
+      "stroke": 4,
+      "radius": 6,
+      "caption": {
+        "plate": "#1E1D1A",
+        "ink": "#EEEAE1",
+        "upcoming": "#EEEAE1",
+        "size": 56,
+        "radius": 0,
+        "align": "band",
+        "font": "Atkinson Hyperlegible Next"
+      },
+      "icons": [
+        "ri"
+      ],
+      "iconSuffix": "-fill",
+      "iconAlias": {
+        "browser": "window",
+        "id-card": "id-card",
+        "warning": "error-warning",
+        "envelope": "mail",
+        "document": "file-text",
+        "agent": "robot",
+        "user": "user",
+        "chart": "line-chart",
+        "mail": "mail",
+        "postcard": "mail-open",
+        "satellite": "radar"
+      }
+    },
+    "layout-dark": {
+      "id": "layout-dark",
+      "dark": true,
+      "look": "stage",
+      "bg": "#0E1116",
+      "surface": "#161B22",
+      "lit": "#1B2633",
+      "lane": "#0E1116",
+      "onLane": "#E6EDF3",
+      "ink": "#E6EDF3",
+      "ink2": "#AAB4BF",
+      "back": "#7D8894",
+      "line": "#3A4450",
+      "roles": {
+        "a": "#39BFFF",
+        "b": "#E5452E",
+        "c": "#DCD146",
+        "warn": "#E5452E"
+      },
+      "paint": {
+        "yellow": "#F2C522",
+        "red": "#E5452E",
+        "blue": "#3D7BE0",
+        "orange": "#F08C24",
+        "green": "#2FA36B",
+        "brown": "#7B4A26",
+        "sealed": "#E6EDF3",
+        "agent": "#E5452E",
+        "server": "#39BFFF",
+        "box": "#268C6B",
+        "hub": "#DCD146",
+        "gate": "#E5452E",
+        "step": "#3A4450"
+      },
+      "font": {
+        "text": "IBM Plex Sans",
+        "display": "IBM Plex Sans",
+        "data": "Recursive"
+      },
+      "weight": {
+        "text": 400,
+        "strong": 600,
+        "display": 700
+      },
+      "stroke": 3,
+      "radius": 14,
+      "caption": {
+        "plate": "#07090C",
+        "ink": "#E6EDF3",
+        "upcoming": "#E6EDF3",
+        "size": 46,
+        "radius": 0,
+        "align": "band"
+      },
+      "icons": [
+        "tabler"
+      ],
+      "iconAlias": {
+        "browser": "browser",
+        "server": "server",
+        "id-card": "identification-card",
+        "document": "file-text",
+        "agent": "robot",
+        "user": "user",
+        "chart": "chart-line",
+        "mail": "envelope-simple",
+        "postcard": "envelope-open",
+        "satellite": "broadcast",
+        "database": "database",
+        "shield": "shield-check",
+        "tools": "tool",
+        "cpu": "cpu",
+        "terminal": "terminal-2",
+        "box": "box",
+        "check-circle": "circle-check",
+        "book": "book",
+        "lock": "lock",
+        "key": "key",
+        "eye": "eye",
+        "warning": "alert-triangle",
+        "envelope": "mail"
+      },
+      "seed": 7,
+      "chrome": {
+        "progress": "corner"
+      }
+    }
+  }
+}

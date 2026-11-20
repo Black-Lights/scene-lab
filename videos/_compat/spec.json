@@ -1,0 +1,85 @@
+{
+  "title": "How HTTPS keeps a secret in public",
+  "target_minutes": 3,
+  "voice": "af_heart",
+  "speed": 1.0,
+  "captions": true,
+  "scenes": [
+    {
+      "say": "Every time you see the little lock in your browser, two computers that had never met just agreed on a secret, while anyone on the network could be listening. How is that even possible?",
+      "visual": { "type": "title", "kicker": "Explained in three minutes", "icon": "🔒", "title": "How HTTPS keeps a secret in public", "subtitle": "The lock icon, in plain words" }
+    },
+    {
+      "heading": "The problem",
+      "say": "Plain HTTP is like a postcard. Every network along the way can read it, and can even change it. HTTPS is a sealed envelope. Only the two ends can read it, and any tampering is detected.",
+      "visual": { "type": "compare",
+        "left": { "title": "HTTP", "icon": "📮", "items": [ { "text": "A postcard: anyone on the route can read it", "cue": "read" }, { "text": "Anyone can change it", "cue": "change" } ] },
+        "right": { "title": "HTTPS", "icon": "✉️", "cue": "HTTPS", "items": [ { "text": "A sealed envelope: only the two ends read it", "cue": "only" }, { "text": "Tampering is detected", "cue": "tampering" } ] } }
+    },
+    {
+      "heading": "The trick",
+      "say": "Here is the trick, explained with paint. Mixing two paints is easy, but un-mixing them is practically impossible. That one-way step is the whole secret.",
+      "visual": { "type": "analogy", "leftTag": "The idea", "rightTag": "Is like",
+        "left": { "icon": "🔑", "label": "Agreeing on a key", "sub": "in front of everyone" },
+        "right": { "icon": "🎨", "label": "Mixing paint", "sub": "easy to mix, impossible to un-mix", "cue": "paint" } }
+    },
+    {
+      "say": "Both sides start from the same public color. Each one secretly mixes in a private color, and sends the mixture across. Then each adds its own secret color once more. Both land on exactly the same final color, but anyone watching only ever saw the mixtures. In real HTTPS the colors are huge numbers, and un-mixing them would take today's computers longer than the age of the universe.",
+      "visual": { "type": "svg", "caption": "Each side keeps its secret color. Only mixtures travel.",
+        "svg": "<svg viewBox='0 0 1400 520' xmlns='http://www.w3.org/2000/svg' font-family='Segoe UI, sans-serif'><circle cx='220' cy='220' r='130' fill='#facc15'/><text x='220' y='420' fill='#9aa3b8' font-size='40' text-anchor='middle'>public color</text><text x='455' y='255' fill='#f4f6fb' font-size='110' text-anchor='middle'>+</text><circle cx='690' cy='220' r='130' fill='#ef4444'/><text x='690' y='420' fill='#9aa3b8' font-size='40' text-anchor='middle'>your secret</text><text x='925' y='255' fill='#f4f6fb' font-size='110' text-anchor='middle'>=</text><circle cx='1160' cy='220' r='130' fill='#f97316'/><text x='1160' y='420' fill='#9aa3b8' font-size='40' text-anchor='middle'>what you send</text></svg>" }
+    },
+    {
+      "heading": "The handshake",
+      "say": "So the handshake goes like this. Your browser says hello and sends its paint mixture. The server replies with its own mixture, plus a certificate that proves who it is, like an ID card. Both now hold the same secret key, and everything after that is encrypted.",
+      "visual": { "type": "flow", "items": [
+        { "icon": "👋", "label": "Hello", "sub": "+ browser's mixture", "cue": "hello" },
+        { "icon": "🪪", "label": "Certificate", "sub": "+ server's mixture", "cue": "certificate" },
+        { "icon": "🔑", "label": "Same secret key", "cue": "same" },
+        { "icon": "🔐", "label": "Encrypted", "cue": "encrypted" } ] }
+    },
+    {
+      "say": "All of this happens on port four forty-three, the door your browser knocks on for HTTPS. Plain HTTP uses port eighty.",
+      "visual": { "type": "stat", "value": 443, "label": "the port for HTTPS", "sub": "plain HTTP uses port 80" }
+    },
+    {
+      "heading": "Faster too",
+      "say": "Newer versions are faster, too. TLS one point two needs two round trips before your data can flow. TLS one point three needs just one. And a resumed connection can send data right away.",
+      "visual": { "type": "chart", "title": "Round trips before data flows", "items": [
+        { "label": "TLS 1.2", "value": 2, "cue": "two" },
+        { "label": "TLS 1.3", "value": 1, "cue": "just" },
+        { "label": "TLS 1.3, resumed", "value": 0, "cue": "resumed" } ] }
+    },
+    {
+      "heading": "A short history",
+      "say": "The lock has been evolving for about thirty years. SSL arrived in nineteen ninety-five. TLS replaced it in ninety-nine. Version one point two came in two thousand eight, and one point three in twenty eighteen.",
+      "visual": { "type": "timeline", "items": [
+        { "when": "1995", "label": "SSL 2.0, the first public version", "cue": "SSL" },
+        { "when": "1999", "label": "TLS 1.0 replaces SSL", "cue": "replaced" },
+        { "when": "2008", "label": "TLS 1.2", "cue": "came" },
+        { "when": "2018", "label": "TLS 1.3, faster and simpler", "cue": "twenty" } ] }
+    },
+    {
+      "heading": "What snoopers see",
+      "say": "And this is what someone snooping on the network actually sees. A tiny header that says, encrypted data follows, and then bytes that look like pure noise.",
+      "visual": { "type": "code", "title": "What an eavesdropper sees", "cue": "header", "highlight": [1],
+        "code": "17 03 03 00 4a\n9f 2c e1 07 b4 5d 0a 73 c8 31\n6e f2 0b 99 a4 1d 58 e3 07 bc\n2a 91 d4 66 0f 3b c2 8e 75 19\n…" }
+    },
+    {
+      "heading": "The catch",
+      "say": "So the lock is a promise about the connection. But here is the catch.",
+      "visual": { "type": "image", "image": "padlock", "caption": "A promise about the connection" }
+    },
+    {
+      "say": "The lock means the line is private. It does not mean the site is honest. A scam site can have a perfectly valid certificate too.",
+      "visual": { "type": "quote", "icon": "⚠️", "text": "The lock means the line is private. Not that the site is honest." }
+    },
+    {
+      "heading": "Recap",
+      "say": "So, three things to remember. The secret key is never sent, it is mixed. The certificate proves who you are talking to. And the lock protects the line, not the truth.",
+      "visual": { "type": "points", "title": "Remember", "items": [
+        { "icon": "🎨", "text": "The key is mixed, never sent", "cue": "secret" },
+        { "icon": "🪪", "text": "The certificate proves who is talking", "cue": "certificate" },
+        { "icon": "🔒", "text": "The lock protects the line, not the truth", "cue": "lock" } ] }
+    }
+  ]
+}

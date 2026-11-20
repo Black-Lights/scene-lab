@@ -1,0 +1,8 @@
+# Scene Lab: the Python packages, pinned. Python 3.12 (kokoro 0.9.4 needs below 3.13, torch 2.15 needs 3.11 or newer).
+# setup.ps1 installs torch==2.15.0 FIRST, from PyTorch's CPU index, so pip does not pull a CUDA build; then this file.
+kokoro==0.9.4         # local TTS; KPipeline returns per-token start_ts/end_ts -> exact subtitles
+misaki[en]==0.9.4     # English G2P for kokoro
+soundfile==0.13.1     # WAV read/write
+numpy==2.5.4          # audio arrays (make.py, zonos.py); kokoro needs it too
+transformers==5.23.0  # kokoro needs it; zonos.py's aligner (wav2vec2) uses it directly
+certifi               # a current CA bundle for downloads (an out-of-date Windows certificate store fails on some hosts); unpinned so it stays current
